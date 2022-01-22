@@ -1,5 +1,5 @@
 import * as React from 'react'
-
+import Link from 'next/link'
 import { AppBar, Toolbar, Typography, IconButton } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
@@ -8,7 +8,9 @@ const appBarLabel = (label: string) => {
   return (
     <Toolbar>
       <Typography variant='h6' noWrap component='div' sx={{ flexGrow: 1 }}>
-        {label}
+        <Link href='/'>
+          <a>{label}</a>
+        </Link>
       </Typography>
       <IconButton edge='start' color='inherit' aria-label='menu' sx={{ mr: 2 }}>
         <MenuIcon />
