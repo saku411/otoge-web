@@ -1,6 +1,8 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
+import SiteBar from './components/SiteBar'
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -11,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
       </Head>
+      <SiteBar />
       <Component {...pageProps} />
     </>
   )
