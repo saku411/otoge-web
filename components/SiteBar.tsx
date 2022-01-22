@@ -32,7 +32,7 @@ const SiteBar = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <AppBar position='static' color='primary'>
-        {appBarLabel('音ゲー')}
+        {appBarLabel('第6回 音ゲー七帝戦')}
       </AppBar>
     </ThemeProvider>
   )
