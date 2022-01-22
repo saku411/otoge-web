@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import SiteBar from './components/SiteBar'
+import SiteBar from '../components/SiteBar'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
