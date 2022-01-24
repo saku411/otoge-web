@@ -1,3 +1,9 @@
+# 第 6 回 音ゲー七帝戦 web サイト管理リポジトリ
+
+旧サイト ↓
+
+[https://nagato-san.com/5th-7univ-otoge/](https://nagato-san.com/5th-7univ-otoge/)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
