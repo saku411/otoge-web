@@ -14,6 +14,10 @@ import {
 import MenuIcon from '@mui/icons-material/Menu'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
+import MusicVideoOutlinedIcon from '@mui/icons-material/MusicVideoOutlined'
+import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined'
+import TabletOutlinedIcon from '@mui/icons-material/TabletOutlined'
+import LiveHelpOutlinedIcon from '@mui/icons-material/LiveHelpOutlined'
 
 import MuiLink from '@mui/material/Link'
 
@@ -29,6 +33,38 @@ const DrawerList = () => {
               <HomeOutlinedIcon />
             </ListItemIcon>
             <ListItemText primary='ホーム' />
+          </ListItem>
+        </MuiLink>
+        <MuiLink href='/about-arcade' color='#fff' underline='none'>
+          <ListItem button key='index'>
+            <ListItemIcon>
+              <SportsEsportsOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary='アーケード部門概要' />
+          </ListItem>
+        </MuiLink>
+        <MuiLink href='/about-ouchi' color='#fff' underline='none'>
+          <ListItem button key='index'>
+            <ListItemIcon>
+              <TabletOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary='家庭用部門概要' />
+          </ListItem>
+        </MuiLink>
+        <MuiLink href='/kadai' color='#fff' underline='none'>
+          <ListItem button key='index'>
+            <ListItemIcon>
+              <MusicVideoOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary='課題曲' />
+          </ListItem>
+        </MuiLink>
+        <MuiLink href='/howto' color='#fff' underline='none'>
+          <ListItem button key='index'>
+            <ListItemIcon>
+              <LiveHelpOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary='選曲指南' />
           </ListItem>
         </MuiLink>
       </List>
