@@ -2,7 +2,25 @@ import React from 'react'
 import Grid from '@mui/material/Grid'
 import { Box } from '@mui/system'
 import { KadaiKyokuLists } from '../libs/KadaiKyokuLists'
-import { Card, Typography, CardMedia, CardContent } from '@mui/material'
+import { Card, Collapse, Typography, CardMedia, CardContent, CardActions } from '@mui/material'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { styled } from '@mui/material/styles'
+import IconButton, { IconButtonProps } from '@mui/material/IconButton'
+
+interface ExpandMoreProps extends IconButtonProps {
+  expand: boolean
+}
+
+const ExpandMore = styled((props: ExpandMoreProps) => {
+  const { expand, ...other } = props
+  return <IconButton {...other} />
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}))
 
 const Kisyu = [
   'IIDXSP',
@@ -32,13 +50,32 @@ const Kisyu = [
 
 const Kadai = () => {
   return (
-    <Grid container spacing={2} direction='row' justifyContent='space-evenly' alignItems='center'>
+    <Grid
+      container
+      spacing={2}
+      direction='row'
+      justifyContent='space-between'
+      alignItems='flex-start'
+    >
       {KadaiKyokuLists.map((kadaiKyoku, i) => (
         <>
-          {/* <Grid item xs={6}> */}
-          <Typography variant='h5'>{Kisyu[i / 2]}</Typography>
-          {/* </Grid> */}
-          <Grid item xs={6} sx={{ maxHeight: 150, minHeight: 150 }}>
+          {i % 2 === 0 ? (
+            <Grid
+              item
+              xs={12}
+              container
+              direction='column'
+              justifyContent='center'
+              alignItems='center'
+            >
+              <Grid item xs={12}>
+                <Typography variant='h3'>{Kisyu[i / 2]}</Typography>
+              </Grid>
+            </Grid>
+          ) : (
+            <></>
+          )}
+          <Grid item xs={6} sx={{ mb: 2 }}>
             <Card sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                 <CardContent>
@@ -46,11 +83,12 @@ const Kadai = () => {
                   <Typography variant='h6'>
                     {kadaiKyoku.difficulty ? '難易度:' + kadaiKyoku.difficulty : '全難易度'}
                   </Typography>
+                  <Typography variant='body2'>{kadaiKyoku.remark}</Typography>
                 </CardContent>
               </Box>
               <CardMedia
                 component='img'
-                sx={{ maxWidth: 150, maxHeight: 150, minWidth: 150, minHeight: 150 }}
+                sx={{ maxWidth: 250, maxHeight: 250, minWidth: 250, minHeight: 250 }}
                 image={kadaiKyoku.image}
                 alt={kadaiKyoku.title}
               />
