@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { CssBaseline } from '@mui/material'
 
 import SiteBar from '../components/SiteBar'
 
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
       </Head>
+      <CssBaseline />
       <SiteBar />
       <Component {...pageProps} />
     </>
