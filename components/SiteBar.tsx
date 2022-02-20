@@ -99,7 +99,7 @@ const SiteBar = () => {
         <Toolbar>
           <Typography variant='h6' noWrap component='div' sx={{ flexGrow: 1 }}>
             <Link href={'/'} underline='none' color={'#ffffff'}>
-              '第6回 音ゲー七帝戦'
+              第6回 音ゲー七帝戦
             </Link>
           </Typography>
           <IconButton
