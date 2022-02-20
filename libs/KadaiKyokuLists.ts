@@ -270,7 +270,7 @@ export const KadaiKyokuLists: KadaiKyokuList[] = [
   },
   {
     title: 'Lepontinia -THE LAST PLANET-',
-    image: '/kadai-song/bms/BMS幽々子.jpg',
+    image: '/kadai-song/bms/BMS幽々子2.jpg',
     difficulty: '★15',
     remark:
       '2曲目は難易度高めに設定していますが、まだ手が届かないと感じている人もぜひ一度挑戦して将来の目標にしてみてください。',
