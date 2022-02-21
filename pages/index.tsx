@@ -2,7 +2,6 @@ import { Box } from '@mui/material'
 import type { NextPage } from 'next'
 
 import ScoreReport from '../components/ScoreReport'
-import SiteBar from 'components/SiteBar'
 const Home: NextPage = () => {
   return (
     <>
