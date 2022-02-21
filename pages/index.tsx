@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <>
       <main>
         <Box sx={{ mx: 'auto', width: 400 }}>
-          <ScoreReport link={'https://otoge-connected.com/competitions/192'} />
+          <ScoreReport link={'https://otoge-connected.com'} />
         </Box>
       </main>
       <footer></footer>
