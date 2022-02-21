@@ -1,24 +1,23 @@
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
-import { CssBaseline } from '@mui/material'
+// pages/_app.tsx
+import { GA_TRACKING_ID, pageview } from '../libs/gtag';
+import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
-import SiteBar from '../components/SiteBar'
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
+  const router = useRouter();
+  useEffect(() => {
+    // GA_TRACKING_ID が設定されていない場合は、処理終了
+    if (!GA_TRACKING_ID) return;
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Head>
-        <link
-          rel='stylesheet'
-          href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
-        />
-        <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons' />
-      </Head>
-      <CssBaseline />
-      <SiteBar />
-      <Component {...pageProps} />
-    </>
-  )
+    const handleRouteChange = (url: string) => {
+      pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
+  return <Component {...pageProps} />;
 }
-
-export default MyApp
