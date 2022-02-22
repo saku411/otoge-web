@@ -81,7 +81,7 @@ const Kadai = () => {
                 <CardContent>
                   <Typography variant='h6'>{kadaiKyoku.title}</Typography>
                   <Typography variant='h6'>
-                    {kadaiKyoku.difficulty ? '難易度:' + kadaiKyoku.difficulty : '全難易度'}
+                    {kadaiKyoku.difficulty ? '難易度:' + kadaiKyoku.difficulty : ''}
                   </Typography>
                   <Typography variant='body2'>{kadaiKyoku.remark}</Typography>
                 </CardContent>
